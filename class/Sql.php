@@ -23,7 +23,7 @@ Class Sql extends PDO {
   // para receber somente um parametro
   private function setParam($statement, $key, $value){
 	
-		$statment->bindParam($key, $value);
+		$statement->bindParam($key, $value);
 
 	}
 
