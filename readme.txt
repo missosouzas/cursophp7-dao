@@ -3,4 +3,4 @@ teste
 ...
 Isto é um teste
 Isto é um teste de ferro!
-Isto é ouro!!!
+Isto é diamante!
