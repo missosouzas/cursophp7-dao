@@ -1,6 +1,7 @@
 
+
 veja só criei local e quero mandar para o github remoto.
 
 
 
-# edicao local deste arquivo
+# edicao local deste arquivo local e remota com resoluçao dos conflitos 
