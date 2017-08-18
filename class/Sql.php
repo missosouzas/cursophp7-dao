@@ -12,18 +12,18 @@ Class Sql extends PDO {
   }
 
   // para receber diversos parametros.
-  private function setParams($statment, $parameters = array()){
+  private function setParams($statement, $parameters = array()){
 
   	foreach ($parameters as $key => $value){
 
-  		$statment->setParam($key,$value);
+  		$this->setParam($statement, $key,$value);
   	}
   }
 
   // para receber somente um parametro
-  private function setParam($statment, $key, $value){
+  private function setParam($statement, $key, $value){
 	
-		$statement->bindParam($key, $value);
+		$statment->bindParam($key, $value);
 
 	}
 
