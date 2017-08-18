@@ -1,2 +1,4 @@
 
-veja só criei local e quero mandar para o github remoto.
+veja sÃ³ criei local e quero mandar para o github remoto.
+
+#esta linha foi remotamente editas
