@@ -2,14 +2,16 @@
 
 require_once("config.php");
 
-//carrega um usuario
+//////////////////////////////////////////////
+/*carrega um usuario */
 //$root = new Usuario();
 
 //$root->loadbyId(5);
 
 //echo $root;
 
-//carrega uma lista de uusarios
+////////////////////////////////////////
+/*carrega uma lista de uusarios */
 
 //$lista = Usuario::getList();
 
@@ -21,11 +23,20 @@ require_once("config.php");
 
 //echo json_encode($search);
 
-//carrega usuario usando o login e a senha
+////////////////////////
+/*carrega usuario usando o login e a senha */
 
-$usuario = new Usuario();
-$usuario->login("jose","123123123"); 
+//$usuario = new Usuario();
+//$usuario->login("jose","123123123"); 
 
-echo $usuario;
+//echo $usuario;
+
+/////////////////////////////
+$aluno = new Usuario("aluno","@senhanova");
+$aluno->insert();
+
+echo $aluno;
+
+
 
 ?>
