@@ -32,10 +32,31 @@ require_once("config.php");
 //echo $usuario;
 
 /////////////////////////////
-$aluno = new Usuario("aluno","@senhanova");
-$aluno->insert();
+/*criando um novo usuario */
+//$aluno = new Usuario("aluno","@senhanova");
+//$aluno->insert();
 
-echo $aluno;
+//echo $aluno;
+
+/////////////////////////////
+/*alterar um usuario */
+
+//$usuario = new Usuario();
+//$usuario->loadbyId(10);
+
+//$usuario->update("Marlon", "888777");
+
+//echo $usuario;
+
+
+/////////////////////////////
+
+$usuario = new Usuario();
+$usuario->loadbyId(8);
+$usuario->delete();
+
+echo $usuario;
+
 
 
 

@@ -105,8 +105,8 @@ public function insert(){
 	$sql	= new Sql();
 
 	$results =  $sql->select("CALL sp_usuarios_insert(:LOGIN, :PASSWORD)",array(
-	'LOGIN'=>$this->getDeslogin(),
-	'PASSWORD'=>$this->getDessenha()
+	':LOGIN'=>$this->getDeslogin(),
+	':PASSWORD'=>$this->getDessenha()
 		));
 
 	if (count($results)>0){
@@ -116,6 +116,37 @@ public function insert(){
 
 }
 
+public function update($login, $password){
+
+	$this->setDeslogin($login);
+	$this->setDessenha($password);
+
+	$sql	= new Sql();
+
+	$sql->query("UPDATE tb_usuarios SET deslogin= :LOGIN, dessenha= :PASSWORD where idusuario= :ID",array(
+	':LOGIN'=>$this->getDeslogin(),
+	':PASSWORD'=>$this->getDessenha(),
+	':ID'=> $this->getIdusuario()
+	));
+
+	
+}
+
+public function delete(){
+	
+	$sql	= new Sql();
+
+	$sql->query("DELETE FROM tb_usuarios  where idusuario= :ID",array(
+	':ID'=> $this->getIdusuario()
+	));
+	$this->setIdusuario(0);
+	$this->setDeslogin("");
+	$this->setDessenha("");
+	$this->setDtcadastro(new DateTime());
+
+
+	
+}
 public function __construct($login = "",$password = ""){
 
 	$this->setDeslogin($login);
@@ -134,7 +165,7 @@ public static function search($login){
 
 	$sql	= new Sql();
 
-	return $sql->select("SELECT * FROM tb_usuarios  where deslogin like :SEARCH ORDER BY deslogin",array('SEARCH'=>"%".$login."%"));
+	return $sql->select("SELECT * FROM tb_usuarios  where deslogin like :SEARCH ORDER BY deslogin",array(':SEARCH'=>"%".$login."%"));
 
 }
 
